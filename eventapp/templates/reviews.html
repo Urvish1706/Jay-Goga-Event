@@ -1,0 +1,161 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container mt-5 mb-5">
+    <div class="row justify-content-center">
+        <div class="col-md-7">
+
+            <div class="card shadow-lg border-0">
+                <div class="card-body p-5">
+
+                    <div class="text-center mb-4">
+                        <h2 class="fw-bold text-primary">
+                            🌟 Add Your Review
+                        </h2>
+                        <p class="text-muted">
+                            Share your valuable feedback with Jay Gogo Event Management
+                        </p>
+                    </div>
+
+                    <form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    <div class="mb-3">
+    <label class="fw-bold">👤 Your Name</label>
+    {{ form.name }}
+</div>
+
+<div class="mb-3">
+    <label class="fw-bold">📷 Upload Your Photo</label>
+    {{ form.photo }}
+</div>
+
+<div class="mb-3">
+    <label class="fw-bold mb-2">⭐ Your Rating</label>
+    <div class="rating-box">
+        {{ form.rating }}
+    </div>
+</div>  
+
+<div class="mb-3">
+    <label class="fw-bold">💬 Share Your Experience</label>
+    {{ form.comment }}
+</div>
+    <div class="text-center mt-4">
+        <button type="submit" class="btn btn-success">
+            Submit Review
+        </button>
+    </div>
+</form>
+
+                </div>
+                <!-- Customer Reviews Section -->
+
+<hr class="my-5">
+
+<div class="container mt-5">
+
+    <h2 class="text-center fw-bold text-primary mb-4">
+        ⭐ Customer Reviews
+    </h2>
+
+    <div class="row">
+
+        {% for review in reviews %}
+        <div class="col-md-4 mb-4">
+
+            <div class="card shadow h-100">
+
+                {% if review.photo %}
+                <img src="{{ review.photo.url }}"
+                     class="card-img-top"
+                     style="height:250px; object-fit:cover;">
+                {% endif %}
+
+                <div class="card-body text-center">
+
+                    <h5 class="fw-bold">{{ review.name }}</h5>
+
+                    <p class="text-warning">
+                        {% for i in "12345" %}
+                            {% if forloop.counter <= review.rating|add:"0" %}
+                                ⭐
+                            {% endif %}
+                        {% endfor %}
+                    </p>
+
+                    <p>{{ review.comment }}</p>
+
+                </div>
+
+            </div>
+
+        </div>
+        {% endfor %}
+
+    </div>
+
+</div>
+
+<style>
+.card{
+    border:none;
+    border-radius:15px;
+    overflow:hidden;
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.card-img-top{
+    border-bottom:1px solid #eee;
+}
+</style>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<style>
+.card{
+    border-radius:20px;
+}
+
+.card-body{
+    background:#fff;
+}
+
+input,
+textarea,
+select{
+    width:100%;
+    padding:12px;
+    border:1px solid #ddd;
+    border-radius:10px;
+    outline:none;
+}
+
+input:focus,
+textarea:focus,
+select:focus{
+    border-color:#0d6efd;
+    box-shadow:0 0 8px rgba(13,110,253,0.3);
+}
+
+.btn-success{
+    border-radius:10px;
+    font-weight:600;
+}
+
+.btn-success:hover{
+    transform:translateY(-2px);
+    transition:0.3s;
+}
+</style>
+
+{% endblock %}

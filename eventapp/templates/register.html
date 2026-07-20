@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container mt-5 mb-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+
+            <div class="card shadow-lg border-0 rounded-4">
+
+                <div class="card-header bg-primary text-white text-center py-4">
+                    <h2>🎉 Create Account</h2>
+                    <p class="mb-0">Join Jay Goga Event Management</p>
+                </div>
+
+                <div class="card-body p-4">
+
+                    {% if messages %}
+                        {% for message in messages %}
+                            <div class="alert alert-warning">
+                                {{ message }}
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+
+                    <form method="post">
+                        {% csrf_token %}
+
+                        <div class="mb-3">
+                            <label class="form-label">Name</label>
+                            {{ form.first_name }}
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Email Address</label>
+                            {{ form.email }}
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Password</label>
+                            {{ form.password1 }}
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Confirm Password</label>
+                            {{ form.password2 }}
+                        </div>
+
+                        <button type="submit" class="btn btn-primary w-100">
+                            Register Now
+                        </button>
+                    </form>
+
+                    <hr>
+
+                    <div class="text-center">
+                        Already have an account?
+                        <a href="{% url 'login' %}">Login Here</a>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}

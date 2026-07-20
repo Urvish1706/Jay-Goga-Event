@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container mt-5">
+
+
+<div class="card shadow p-4">
+
+    <h1 class="text-center">
+        {{ package_name }}
+    </h1>
+
+    <h3 class="text-success text-center">
+        {{ package.price }}
+    </h3>
+
+    <hr>
+
+    <h4>Services Included:</h4>
+
+<ul>
+    {% for service in package.services %}
+        <li>{{ service }}</li>
+    {% endfor %}
+</ul>
+
+    <div class="text-center mt-4">
+
+        <a href="{% url 'book_event' %}"
+           class="btn btn-primary">
+            Book Now
+        </a>
+
+        <a href="{% url 'packages' %}"
+           class="btn btn-secondary">
+            Back
+        </a>
+
+    </div>
+
+</div>
+
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,135 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container mt-5">
+
+    <div class="row justify-content-center">
+
+        <div class="col-md-5">
+
+            <div class="card shadow-lg border-0 rounded-4">
+
+                <div class="card-body p-5">
+
+                    <h2 class="text-center fw-bold text-success">
+                        Email Verification
+                    </h2>
+
+                    <p class="text-center text-muted">
+                        Enter the 6-digit OTP sent to
+                        <br>
+                        <b>{{ user.email }}</b>
+                    </p>
+
+                    {% if messages %}
+                        {% for message in messages %}
+                            <div class="alert alert-warning text-center">
+                                {{ message }}
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+
+                    <form method="POST">
+
+                        {% csrf_token %}
+
+                        <div class="d-flex justify-content-between mb-4">
+
+                            <input type="text" maxlength="1" class="otp form-control text-center">
+                            <input type="text" maxlength="1" class="otp form-control text-center">
+                            <input type="text" maxlength="1" class="otp form-control text-center">
+                            <input type="text" maxlength="1" class="otp form-control text-center">
+                            <input type="text" maxlength="1" class="otp form-control text-center">
+                            <input type="text" maxlength="1" class="otp form-control text-center">
+
+                        </div>
+
+                        <input
+                            type="hidden"
+                            name="otp"
+                            id="otp">
+
+                        <button class="btn btn-success w-100">
+
+                            Verify OTP
+
+                        </button>
+
+                    </form>
+
+                    <div class="text-center mt-4">
+
+                        <p>
+                        Resend OTP in <span id="countdown">60</span> sec
+                        </p>
+
+                        <form method="POST" action="{% url 'resend_otp' %}">
+    {% csrf_token %}
+    <button id="resend-btn" disabled>
+    Resend OTP
+</button>
+</form>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<style>
+
+.otp{
+
+width:55px;
+
+height:60px;
+
+font-size:26px;
+
+font-weight:bold;
+
+margin:4px;
+
+border-radius:12px;
+
+text-align:center;
+
+}
+
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    let timeLeft = 60;
+
+    const countdown = document.getElementById("countdown");
+    const resendBtn = document.getElementById("resend-btn");
+
+    resendBtn.disabled = true;
+
+    let timer = setInterval(function () {
+
+        timeLeft--;
+
+        countdown.textContent = timeLeft;
+
+        if (timeLeft <= 0) {
+            clearInterval(timer);
+            countdown.textContent = "0";
+            resendBtn.disabled = false;
+        }
+
+    }, 1000);
+
+});
+</script>
+
+{% endblock %}

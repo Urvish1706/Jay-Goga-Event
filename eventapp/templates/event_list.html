@@ -1,0 +1,507 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container mt-5">
+
+ 
+<h1 class="text-center mb-4">
+    Event Categories
+</h1>
+
+<div class="mb-4">
+
+    <div>
+ 
+   <input type="text"
+       id="eventSearch"
+       class="form-control"
+       placeholder="Search Event...">
+
+</div>
+
+</div>
+
+<div class="row g-4 align-items-stretch">
+
+    <div class="col-md-3 mb-4 col-md-3 mb-4 event-item event-item"
+     data-event="Wedding Event">
+        <div class="card shadow event-card w-100">
+
+    <img src="{% static 'images/Wedding Event.jpg' %}"
+     class="card-img-top category-img">
+
+    <div class="card-body text-center">
+
+        <h4>Wedding Event</h4>
+
+        <p>
+            Luxury wedding planning and
+            decoration services.
+        </p>
+
+        <h5 class="text-success">
+            Starting From ₹25,000
+        </h5>
+
+        <div>
+         <a href="{% url 'event_details' 'Wedding Event' %}" class="btn btn-info">
+    View Details
+</a>
+
+            <a href="{% url 'book_event' %}"
+               class="btn btn-primary">
+                Book Now
+            </a>
+        </div>
+
+    </div>
+
+</div>
+
+    </div>
+
+    <div class="col-md-3 mb-4 col-md-3 mb-4 event-item event-item"
+     data-event="Birthday Party">
+        <div class="card shadow event-card w-100">
+
+
+    <img src="{% static 'images/Birthday Party.jpg' %}"
+         class="card-img-top category-img">
+
+    <div class="card-body text-center">
+
+        <h4>Birthday Party</h4>
+
+        <p>
+            Creative birthday party planning, decoration,
+            games, entertainment and memorable celebrations.
+        </p>
+
+        <h5 class="text-success">
+            Starting From ₹15,000
+        </h5>
+
+        <div>
+        <a href="{% url 'event_details' 'Birthday Party' %}" class="btn btn-info">
+    View Details
+</a>
+
+            <a href="{% url 'book_event' %}"
+               class="btn btn-primary">
+                Book Now
+            </a>
+        </div>
+
+    </div>
+
+</div>
+
+    </div>
+
+    <div class="col-md-3 mb-4 col-md-3 mb-4 event-item event-item"
+     data-event="Engagement Event">
+        <div class="card shadow event-card w-100">
+
+
+    <img src="{% static 'images/Engagement Event.jpg' %}"
+         class="card-img-top category-img">
+
+    <div class="card-body text-center">
+
+        <h4>Engagement Event</h4>
+
+        <p>
+            Elegant engagement ceremony planning with
+            beautiful decoration and premium event setup.
+        </p>
+
+        <h5 class="text-success">
+            Starting From ₹20,000
+        </h5>
+
+        <div>
+            <a href="{% url 'event_details' 'Engagement Event' %}" class="btn btn-info">
+    View Details
+</a>
+
+            <a href="{% url 'book_event' %}"
+               class="btn btn-primary">
+                Book Now
+            </a>
+        </div>
+
+    </div>
+
+</div>
+
+    </div>
+
+    <div class="col-md-3 mb-4 col-md-3 mb-4 event-item event-item"
+     data-event="Corporate Event">
+        <div class="card shadow event-card w-100">
+
+
+    <img src="{% static 'images/Corporate Event.jpg' %}"
+         class="card-img-top category-img">
+
+    <div class="card-body text-center">
+
+        <h4>Corporate Event</h4>
+
+        <p>
+            Professional corporate meetings, conferences,
+            seminars and business event management services.
+        </p>
+
+        <h5 class="text-success">
+            Starting From ₹35,000
+        </h5>
+
+        <div>
+            <a href="{% url 'event_details' 'Corporate Event' %}" class="btn btn-info">
+    View Details
+</a>
+
+            <a href="{% url 'book_event' %}"
+               class="btn btn-primary">
+                Book Now
+            </a>
+        </div>
+
+    </div>
+
+</div>
+
+    </div>
+
+    <div class="col-md-3 mb-4 col-md-3 mb-4 event-item event-item"
+     data-event="Anniversary Event">
+
+    <div class="card shadow event-card">
+
+        <img src="{% static 'images/Anniversary Event.jpg' %}"
+             class="card-img-top category-img">
+
+        <div class="card-body text-center">
+
+            <h4>Anniversary Event</h4>
+
+            <p>
+                Memorable anniversary celebrations with
+                premium decoration and entertainment.
+            </p>
+
+            <h5 class="text-success">
+                Starting From ₹18,000
+            </h5>
+
+            <div>
+                <a href="{% url 'event_details' 'Anniversary Event' %}" class="btn btn-info">
+    View Details
+</a>
+
+                <a href="{% url 'book_event' %}"
+                   class="btn btn-primary">
+                    Book Now
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="col-md-3 mb-4 col-md-3 mb-4 event-item event-item"
+     data-event="Festival Event">
+
+    <div class="card shadow event-card w-100">
+
+        <img src="{% static 'images/Festival Event.jpg' %}"
+             class="card-img-top category-img">
+
+        <div class="card-body text-center">
+
+            <h4>Festival Event</h4>
+
+            <p>
+                Cultural and festival celebrations with
+                complete event management services.
+            </p>
+
+            <h5 class="text-success">
+                Starting From ₹30,000
+            </h5>
+
+            <div>
+                <a href="{% url 'event_details' 'Festival Event' %}" class="btn btn-info">
+    View Details
+</a>
+
+                <a href="{% url 'book_event' %}"
+                   class="btn btn-primary">
+                    Book Now
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="col-md-3 mb-4 col-md-3 mb-4 event-item event-item"
+     data-event="Concert Event">
+
+    <div class="card shadow event-card w-100">
+
+        <img src="{% static 'images/Concert Event.jpg' %}"
+             class="card-img-top category-img">
+
+        <div class="card-body text-center">
+
+            <h4>Concert Event</h4>
+
+            <p>
+                Live music concerts, stage setup,
+                lighting and sound management services.
+            </p>
+
+            <h5 class="text-success">
+                Starting From ₹40,000
+            </h5>
+
+            <div>
+                <a href="{% url 'event_details' 'Concert Event' %}" class="btn btn-info">
+    View Details
+</a>
+
+                <a href="{% url 'book_event' %}"
+                   class="btn btn-primary">
+                    Book Now
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="col-md-3 mb-4 col-md-3 mb-4 event-item event-item"
+     data-event="Baby Shower">
+    <div class="card shadow event-card w-100">
+
+        <img src="{% static 'images/Baby Shower.jpg' %}"
+             class="card-img-top category-img">
+
+        <div class="card-body text-center">
+
+            <h4>Baby Shower</h4>
+
+            <p>
+                Beautiful baby shower celebrations with
+                creative decoration and fun activities.
+            </p>
+
+            <h5 class="text-success">
+                Starting From ₹12,000
+            </h5>
+
+            <div>
+                <a href="{% url 'event_details' 'Baby Shower' %}" class="btn btn-info">
+    View Details
+</a>
+
+                <a href="{% url 'book_event' %}"
+                   class="btn btn-primary">
+                    Book Now
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<div class="col-md-3 mb-4 col-md-3 mb-4 event-item event-item"
+     data-event="Farewell Party">
+    <div class="card shadow event-card w-100">
+
+        <img src="{% static 'images/Farewell Party.jpg' %}"
+             class="card-img-top category-img">
+
+        <div class="card-body text-center">
+
+            <h4>Farewell Party</h4>
+
+            <p>
+                Memorable farewell celebrations with
+                entertainment and event planning services.
+            </p>
+
+            <h5 class="text-success">
+                Starting From ₹15,000
+            </h5>
+
+            <div>
+                <a href="{% url 'event_details' 'Farewell Party' %}" class="btn btn-info">
+    View Details
+</a>
+
+                <a href="{% url 'book_event' %}"
+                   class="btn btn-primary">
+                    Book Now
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<div class="col-md-3 mb-4 col-md-3 mb-4 event-item event-item"
+     data-event="SchoolCollege Event">
+    <div class="card shadow event-card w-100">
+
+        <img src="{% static 'images/SchoolCollege Event.jpg' %}"
+             class="card-img-top category-img">
+
+        <div class="card-body text-center">
+
+            <h4>School/College Event</h4>
+
+            <p>
+                Annual functions, festivals, seminars,
+                fresher parties and farewell events.
+            </p>
+
+            <h5 class="text-success">
+                Starting From ₹20,000
+            </h5>
+
+            <div>
+                <a href="{% url 'event_details' 'SchoolCollege Event' %}" class="btn btn-info">
+    View Details
+</a>
+
+                <a href="{% url 'book_event' %}"
+                   class="btn btn-primary">
+                    Book Now
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<div class="col-md-3 mb-4 col-md-3 mb-4 event-item event-item"
+     data-event="House Warming">
+    <div class="card shadow event-card w-100">
+
+        <img src="{% static 'images/House Warming.jpg' %}"
+             class="card-img-top category-img">
+
+        <div class="card-body text-center">
+
+            <h4>House Warming</h4>
+
+            <p>
+                Elegant house warming ceremonies with
+                decoration and guest management services.
+            </p>
+
+            <h5 class="text-success">
+                Starting From ₹18,000
+            </h5>
+
+            <div>
+                <a href="{% url 'event_details' 'House Warming' %}" class="btn btn-info">
+    View Details
+</a>
+
+                <a href="{% url 'book_event' %}"
+                   class="btn btn-primary">
+                    Book Now
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<div class="col-md-3 mb-4 col-md-3 mb-4 event-item event-item"
+     data-event="Cultural Program">
+    <div class="card shadow event-card w-100">
+
+        <img src="{% static 'images/Cultural Program.jpg' %}"
+             class="card-img-top category-img">
+
+        <div class="card-body text-center">
+
+            <h4>Cultural Program</h4>
+
+            <p>
+                Traditional and cultural events with
+                complete stage and event management.
+            </p>
+
+            <h5 class="text-success">
+                Starting From ₹22,000
+            </h5>
+
+            <div>
+                <a href="{% url 'event_details' 'Cultural Program' %}" class="btn btn-info">
+    View Details
+</a>
+
+                <a href="{% url 'book_event' %}"
+                   class="btn btn-primary">
+                    Book Now
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+
+
+</div>
+ 
+
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+
+    const searchBox = document.getElementById("eventSearch");
+
+    searchBox.addEventListener("keyup", function() {
+
+        let search = this.value.toLowerCase().trim();
+
+        let cards = document.querySelectorAll(".event-item");
+
+        cards.forEach(function(card) {
+
+            let title = card.querySelector("h4").textContent.toLowerCase();
+
+            if (title.includes(search) || search === "") {
+                card.style.display = "block";
+            } else {
+                card.style.display = "none";
+            }
+
+        });
+
+    });
+
+});
+</script>
+
+{% endblock %}

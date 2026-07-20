@@ -1,0 +1,197 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container mt-5">
+
+
+<h1 class="text-center mb-5">
+    Our Packages
+</h1>
+
+<div class="row g-4">
+
+    <!-- Silver Package -->
+    <div class="col-md-4">
+        <div class="package-card">
+
+            <h2 class="package-title">Silver Package</h2>
+
+            <div class="package-price">₹25,000</div>
+
+            <p class="package-desc">
+                Basic Decoration, Sound System,
+                Seating Arrangement and Event Support.
+            </p>
+
+            <div class="d-flex justify-content-center gap-2">
+                <a href="{% url 'package_details' 'Silver Package' %}"
+                   class="btn btn-info">
+                    View Details
+                </a>
+
+                <a href="{% url 'book_event' %}"
+                   class="btn btn-primary">
+                    Book Now
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Gold Package -->
+    <div class="col-md-4">
+        <div class="package-card">
+
+            <h2 class="package-title">Gold Package</h2>
+
+            <div class="package-price">₹50,000</div>
+
+            <p class="package-desc">
+                Premium Decoration,
+                Photography,
+                DJ Setup.
+            </p>
+
+            <div class="d-flex justify-content-center gap-2">
+                <a href="{% url 'package_details' 'Gold Package' %}"
+                   class="btn btn-info">
+                    View Details
+                </a>
+
+                <a href="{% url 'book_event' %}"
+                   class="btn btn-primary">
+                    Book Now
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Platinum Package -->
+    <div class="col-md-4">
+        <div class="package-card">
+
+            <h2 class="package-title">Platinum Package</h2>
+
+            <div class="package-price">₹1,00,000</div>
+
+            <p class="package-desc">
+                Luxury Decoration,
+                Catering,
+                Photography,
+                Complete Event Setup.
+            </p>
+
+            <div class="d-flex justify-content-center gap-2">
+                <a href="{% url 'package_details' 'Platinum Package' %}"
+                   class="btn btn-info">
+                    View Details
+                </a>
+
+                <a href="{% url 'book_event' %}"
+                   class="btn btn-primary">
+                    Book Now
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Diamond Package -->
+    <div class="col-md-4">
+        <div class="package-card">
+
+            <h2 class="package-title">Diamond Package</h2>
+
+            <div class="package-price">₹1,50,000</div>
+
+            <p class="package-desc">
+                Luxury Decoration,
+                Premium Catering,
+                Photography,
+                Videography,
+                DJ & Fireworks.
+            </p>
+
+            <div class="d-flex justify-content-center gap-2">
+                <a href="{% url 'package_details' 'Diamond Package' %}"
+                   class="btn btn-info">
+                    View Details
+                </a>
+
+                <a href="{% url 'book_event' %}"
+                   class="btn btn-primary">
+                    Book Now
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Royal Package -->
+    <div class="col-md-4">
+        <div class="package-card">
+
+            <h2 class="package-title">Royal Package</h2>
+
+            <div class="package-price">₹2,50,000</div>
+
+            <p class="package-desc">
+                Complete Royal Event Setup,
+                Premium Stage,
+                Catering,
+                Photography & Entertainment.
+            </p>
+
+            <div class="d-flex justify-content-center gap-2">
+                <a href="{% url 'package_details' 'Royal Package' %}"
+                   class="btn btn-info">
+                    View Details
+                </a>
+
+                <a href="{% url 'book_event' %}"
+                   class="btn btn-primary">
+                    Book Now
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Wedding Premium -->
+    <div class="col-md-4">
+        <div class="package-card">
+
+            <h2 class="package-title">Wedding Premium</h2>
+
+            <div class="package-price">₹5,00,000</div>
+
+            <p class="package-desc">
+                Full Wedding Management,
+                Catering,
+                Decoration,
+                Photography,
+                DJ & Guest Management.
+            </p>
+
+            <div class="d-flex justify-content-center gap-2">
+                <a href="{% url 'package_details' 'Wedding Premium' %}"
+                   class="btn btn-info">
+                    View Details
+                </a>
+
+                <a href="{% url 'book_event' %}"
+                   class="btn btn-primary">
+                    Book Now
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+</div>
+
+{% endblock %}

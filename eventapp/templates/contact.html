@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container mt-5">
+
+<div class="card shadow">
+
+<div class="text-center mb-4">
+    <h2 class="fw-bold text-primary">📞 Contact Us</h2>
+    <p class="text-muted">
+        We'd love to hear from you. Get in touch with Jay Goga Event Management for bookings and inquiries.
+    </p>
+</div>
+
+<div class="container mt-5">
+
+    <div class="row justify-content-center">
+
+        <div class="col-md-8">
+
+            <!-- Contact Details Card -->
+            <div class="card shadow border-0 mb-4">
+                <div class="card-body">
+                    <h4 class="text-primary">📍 Our Contact Details</h4>
+                    <p><strong>Address:</strong>Ahmedabad</p>
+                    <p><strong>Phone:</strong> Patel Urvish :- 9081501613</p>
+                    <p><strong>Email:</strong> jaygogaevent@gmail.com</p>
+                    <p><strong>Working Hours:</strong> 9:00 AM - 8:00 PM</p>
+                </div>
+            </div>
+
+            <!-- Contact Form Card -->
+            <div class="card shadow">
+                <div class="card-body">
+
+                    <form method="POST">
+                        {% csrf_token %}
+
+                        {{ form.as_p }}
+
+                        <button class="btn btn-success">
+                            Send Message 🚀
+                        </button>
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</div>
+
+</div>
+
+{% endblock %}

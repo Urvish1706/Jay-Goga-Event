@@ -1,0 +1,273 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="container my-5">
+
+    <div class="text-center mb-4">
+        <h1 class="fw-bold">💳 Secure Payment</h1>
+        <p class="text-muted">
+            Complete your booking securely.
+        </p>
+    </div>
+
+    <div class="row">
+
+        <!-- Booking Details -->
+        <div class="col-lg-5">
+
+            <div class="card shadow border-0 rounded-4 mb-4">
+
+                <div class="card-header bg-dark text-white">
+                    <h4 class="mb-0">Booking Details</h4>
+                </div>
+
+                <div class="card-body">
+
+                    <table class="table table-borderless">
+
+                        <tr>
+                            <th>Booking ID</th>
+                            <td>EV-{{ booking.id|stringformat:"04d" }}</td>
+                        </tr>
+
+                        <tr>
+                            <th>Name</th>
+                            <td>{{ booking.name }}</td>
+                        </tr>
+
+                        <tr>
+                            <th>Event</th>
+                            <td>{{ booking.category }}</td>
+                        </tr>
+
+                        <tr>
+                            <th>Package</th>
+                            <td>{{ booking.package }}</td>
+                        </tr>
+
+                        <tr>
+                            <th>Event Date</th>
+                            <td>{{ booking.event_date }}</td>
+                        </tr>
+
+                        <tr class="table-warning">
+                            <th>Amount</th>
+                            <td class="fw-bold fs-4">
+                                ₹ {{ amount }}
+                            </td>
+                        </tr>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Payment Form -->
+        <div class="col-lg-7">
+
+            <div class="card shadow border-0 rounded-4">
+
+                <div class="card-header bg-success text-white">
+                    <h4 class="mb-0">Payment</h4>
+                </div>
+
+                <div class="card-body">
+
+                    <hr class="my-4">
+
+<div class="text-center">
+
+    <h5 class="mb-3">
+        Secure Payment
+    </h5>
+
+    <i class="fa-solid fa-lock fa-2x text-success me-4"></i>
+
+    <i class="fa-solid fa-shield-halved fa-2x text-primary me-4"></i>
+
+    <i class="fa-solid fa-circle-check fa-2x text-warning"></i>
+
+    <br><br>
+
+    <span class="text-muted">
+
+        SSL Protected | 100% Secure | Verified Payment
+
+    </span>
+
+</div>
+
+                    <form method="POST"
+                          enctype="multipart/form-data">
+
+                        {% csrf_token %}
+
+                        <div class="mb-4">
+
+                            <label class="form-label fw-bold">
+                                Select Payment Method
+                            </label>
+
+                            {{ form.payment_method }}
+
+                        </div>
+
+                        <!-- Online Payment Section -->
+
+                        <div id="onlineSection">
+
+                            <div class="text-center">
+
+                                <h4 class="mb-3">
+                                    Scan & Pay
+                                </h4>
+
+                                <img src="data:image/png;base64,{{ qr_code }}"
+                                     class="img-fluid border rounded p-3"
+                                     style="max-width:250px;">
+
+                                <h3 class="text-success mt-3">
+                                    ₹ {{ amount }}
+                                </h3>
+
+                            </div>
+
+                            <div id="onlineSection">
+
+    <div class="text-center">
+
+        <h4>Scan & Pay</h4>
+<!-- 
+        <img src="data:image/png;base64,{{ qr_code }}"
+             class="img-fluid border rounded p-3"
+             style="max-width:250px;"> -->
+<!-- 
+        <h3 class="text-success mt-3">
+            ₹ {{ amount }}
+        </h3> -->
+
+    </div>
+
+    <div class="mt-4">
+
+        <label class="form-label fw-bold">
+            Upload Screenshot
+        </label>
+
+        {{ form.screenshot }}
+
+        <br><br>
+
+        <img id="previewImage"
+             src=""
+             style="display:none;
+                    max-width:250px;
+                    border-radius:10px;
+                    box-shadow:0 5px 15px rgba(0,0,0,.2);">
+
+    </div>
+
+</div>
+
+                        </div>
+
+                        <div class="form-check mt-4">
+
+                            <input class="form-check-input"
+                                   type="checkbox"
+                                   required>
+
+                            <label class="form-check-label">
+
+                                I confirm that the payment details are correct.
+
+                            </label>
+
+                        </div>
+
+                        <button class="btn btn-success btn-lg w-100 mt-4">
+
+                            🔒 Pay Securely
+
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function(){
+
+    const paymentMethod =
+        document.getElementById("id_payment_method");
+
+    const onlineSection =
+        document.getElementById("onlineSection");
+
+    function toggleQR(){
+
+        if(paymentMethod.value=="ONLINE"){
+
+            onlineSection.style.display="block";
+
+        }else{
+
+            onlineSection.style.display="none";
+
+        }
+
+    }
+
+    toggleQR();
+
+    paymentMethod.addEventListener(
+        "change",
+        toggleQR
+    );
+
+});
+
+
+// Image Preview
+
+const fileInput =
+document.getElementById("id_screenshot");
+
+const preview =
+document.getElementById("previewImage");
+
+if(fileInput){
+
+fileInput.onchange=function(e){
+
+const file=e.target.files[0];
+
+if(file){
+
+preview.src=URL.createObjectURL(file);
+
+preview.style.display="block";
+
+}
+
+}
+
+}
+
+</script>
+
+{% endblock %}

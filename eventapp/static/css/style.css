@@ -1,0 +1,424 @@
+/* BODY */
+
+body{
+    background:#f4f6f9;
+    font-family: Arial, sans-serif;
+}
+
+
+/* HERO SECTION */
+
+.hero{
+    background:linear-gradient(
+        rgba(0,0,0,.6),
+        rgba(0,0,0,.6)
+    ),
+    url('/static/images/banner.jpg');
+
+    background-size:cover;
+    background-position:center;
+
+    color:white;
+    text-align:center;
+
+    padding:180px 20px;
+}
+
+.hero h1{
+    font-size:55px;
+    font-weight:bold;
+}
+
+.hero p{
+    font-size:22px;
+}
+
+
+/* CARDS */
+
+.card{
+    border:none;
+    border-radius:15px;
+    transition:.3s;
+    overflow:hidden;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+
+/* EVENT CATEGORY IMAGES */
+
+.category-img{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+}
+
+
+/* GALLERY IMAGES */
+
+.gallery-img{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+    transition:.3s;
+}
+
+.gallery-img:hover{
+    transform:scale(1.05);
+}
+
+
+/* REVIEW IMAGES */
+
+.review-img{
+    width:100%;
+    height:250px;
+    object-fit:contain;
+    background:#fff;
+}
+
+
+/* FORM */
+
+.form-control{
+    height:50px;
+    border-radius:10px;
+}
+
+
+/* BUTTONS */
+
+.btn{
+    border-radius:10px;
+    font-weight:bold;
+}
+
+
+/* CARD HEADER */
+
+.card-header{
+    border-radius:15px 15px 0 0 !important;
+}
+
+
+/* PACKAGE CARDS */
+
+.package-card{
+
+    height:250px;
+    width:100%;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    padding:20px;
+
+    background:#fff;
+
+    border:1px solid #ddd;
+    border-radius:15px;
+
+    box-shadow:0 4px 12px rgba(0,0,0,.08);
+
+    transition:.3s;
+}
+
+.package-card:hover{
+    transform:translateY(-5px);
+}
+
+.package-title{
+    font-size:32px;
+    font-weight:bold;
+}
+
+.package-price{
+    font-size:28px;
+    color:#d4a017;
+    font-weight:bold;
+    margin:10px 0;
+}
+
+.package-desc{
+    font-size:16px;
+    line-height:1.6;
+}
+
+
+/* FOOTER */
+
+footer{
+    margin-top:50px;
+}
+
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+    .hero h1{
+        font-size:35px;
+    }
+
+    .hero p{
+        font-size:18px;
+    }
+
+    .category-img,
+    .gallery-img,
+    .review-img{
+        height:220px;
+    }
+
+    .package-card{
+        height:auto;
+        min-height:220px;
+    }
+}
+
+.event-card{
+    width:100%;
+    height:550px;
+}
+
+.category-img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.event-card .card-body{
+    height:330px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+}
+
+.event-card p{
+    height:90px;
+    overflow:hidden;
+}
+
+.event-card h4{
+    height:50px;
+}
+
+.event-card h5{
+    height:40px;
+}
+
+.category-img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.card{
+    border-radius: 15px;
+}
+
+.card h3{
+    color: #333;
+    font-weight: 600;
+}
+
+form p{
+    margin-bottom: 15px;
+}
+
+input, textarea, select{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.btn-success{
+    padding: 10px 25px;
+}
+
+.review-card{
+    height:100%;
+    min-height:420px;
+    background:#fff;
+    border-radius:15px;
+    overflow:hidden;
+    transition:.3s;
+}
+
+.review-card:hover{
+    transform:translateY(-8px);
+}
+
+.review-img{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+}
+
+.rating-box ul{
+    list-style:none;
+    padding:0;
+}
+
+.rating-box li{
+    display:inline-block;
+    margin-right:15px;
+    font-size:22px;
+}
+
+.rating-box input{
+    margin-right:5px;
+}
+
+.dropdown-item {
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+    transition: 0.3s;
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus,
+.dropdown-item:active {
+    background-color: #a9abad !important; /* athva tamaro color */
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+.navbar .nav-link{
+    color:#d6d6d6;
+    font-size:17px;
+    margin-right:10px;
+    transition:0.3s;
+}
+
+.navbar .nav-link:hover{
+    color:white;
+}
+
+.navbar-nav{
+    transform: translateX(150px);
+}
+
+/* ===========================
+   PAYMENT PAGE
+=========================== */
+
+body{
+    background:#f5f7fb;
+}
+
+/* Card */
+
+.card{
+    border:none;
+    border-radius:18px;
+    box-shadow:0 10px 30px rgba(0,0,0,.12);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+/* Header */
+
+.card-header{
+    border-radius:18px 18px 0 0 !important;
+    padding:18px;
+}
+
+/* Booking Table */
+
+.table th{
+    width:45%;
+    font-weight:600;
+}
+
+.table td{
+    font-weight:500;
+}
+
+/* Amount */
+
+.table-warning{
+    background:#fff8db !important;
+}
+
+.table-warning td{
+    color:#198754;
+    font-size:28px;
+    font-weight:bold;
+}
+
+/* QR Card */
+
+#onlineSection{
+    background:#fafafa;
+    border:2px dashed #dcdcdc;
+    border-radius:15px;
+    padding:25px;
+    margin-top:20px;
+}
+
+#onlineSection img{
+    border-radius:12px;
+    background:#fff;
+    padding:15px;
+}
+
+/* File Upload */
+
+input[type=file]{
+    padding:12px;
+    border-radius:10px;
+}
+
+/* Pay Button */
+
+.btn-success{
+    border-radius:12px;
+    font-size:20px;
+    font-weight:bold;
+    padding:12px;
+    transition:.3s;
+}
+
+.btn-success:hover{
+    transform:scale(1.03);
+}
+
+/* Checkbox */
+
+.form-check{
+    font-size:17px;
+}
+
+/* Heading */
+
+h1{
+    font-weight:700;
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+.table td,
+.table th{
+    font-size:15px;
+}
+
+.table-warning td{
+    font-size:22px;
+}
+
+}

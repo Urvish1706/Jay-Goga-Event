@@ -1,0 +1,124 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container mt-5 mb-5">
+
+<div class="row justify-content-center">
+
+    <div class="col-lg-8">
+
+        <div class="card shadow-lg border-0">
+
+            <div class="card-header bg-primary text-white text-center py-3">
+                <h2 class="mb-0">🎉 Book Your Event</h2>
+            </div>
+
+            <div class="card-body p-4">
+
+                <form method="POST">
+
+                    {% csrf_token %}
+
+                    <div class="mb-3">
+    <label class="fw-bold">👤 Full Name</label>
+    {{ form.name }}
+</div>
+
+<div class="mb-3">
+    <label class="fw-bold">📞 Contact Number</label>
+    {{ form.contact_number }}
+</div>
+
+<div class="mb-3">
+    <label class="fw-bold">🎉 Select Event Category</label>
+    {{ form.category }}
+</div>
+
+<div class="mb-3">
+    <label class="fw-bold">📦 Select Package</label>
+    {{ form.package }}
+</div>
+
+<div class="mb-3">
+    <label class="fw-bold">📅 Event Date</label>
+    {{ form.event_date }}
+</div>
+
+<div class="mb-3">
+    <label class="fw-bold">📍 Event Venue</label>
+    {{ form.venue }}
+</div>
+
+<div class="mb-3">
+    <label class="fw-bold">👥 Number Of Guests</label>
+    {{ form.guests }}
+</div>
+
+                    <hr>
+
+                    <div class="alert alert-info">
+                        <strong>Booking Information</strong>
+                        <ul class="mb-0 mt-2">
+                            <li>Select your preferred event category.</li>
+                            <li>Choose a package according to your budget.</li>
+                            <li>Enter correct event date and venue.</li>
+                            <li>After booking, proceed to payment.</li>
+                        </ul>
+                    </div>
+
+                    <div class="text-center mt-4">
+                        <button type="submit"
+                                class="btn btn-success btn-lg px-5">
+                            Proceed To Payment 💳
+                        </button>
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+</div>
+
+<style>
+
+.card{
+    border-radius:20px;
+}
+
+.card-header{
+    border-radius:20px 20px 0 0 !important;
+}
+
+input,
+select,
+textarea{
+    width:100%;
+    padding:12px;
+    border:1px solid #ced4da;
+    border-radius:10px;
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+    outline:none;
+    border-color:#0d6efd;
+    box-shadow:0 0 8px rgba(13,110,253,0.25);
+}
+
+.btn-success{
+    border-radius:10px;
+    font-weight:600;
+}
+
+</style>
+
+{% endblock %}

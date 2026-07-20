@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="container mt-5">
+
+    <div class="card shadow p-4">
+
+        <h2 class="text-center">{{ event_name }}</h2>
+
+        <img src="{% static 'images/' %}{{ event.image }}"
+             class="img-fluid rounded mb-4"
+             style="height:400px;width:100%;object-fit:cover;">
+
+        <h4 class="text-success">
+            Starting From {{ event.price }}
+        </h4>
+
+        <hr>
+
+        <h5>Services Included:</h5>
+
+        <ul>
+            {% for service in event.services %}
+                <li>{{ service }}</li>
+            {% endfor %}
+        </ul>
+
+        <a href="{% url 'book_event' %}"
+           class="btn btn-primary">
+            Book Now
+        </a>
+
+    </div>
+
+</div>
+
+{% endblock %}
