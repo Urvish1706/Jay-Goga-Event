@@ -58,23 +58,23 @@ def register_view(request):
             )
 
             # Send OTP email
-            send_mail(
-                "Email Verification - Jay Goga Event",
-                f"""
-Hello {user.first_name},
+#             send_mail(
+#                 "Email Verification - Jay Goga Event",
+#                 f"""
+# Hello {user.first_name},
 
-Thank you for registering.
+# Thank you for registering.
 
-Your OTP is: {otp}
+# Your OTP is: {otp}
 
-Please do not share this OTP with anyone.
+# Please do not share this OTP with anyone.
 
-Jay Goga Event Management
-                """,
-                "urvishpatel008@gmail.com",
-                [user.email],
-                fail_silently=False,
-            )
+# Jay Goga Event Management
+#                 """,
+#                 "urvishpatel008@gmail.com",
+#                 [user.email],
+#                 fail_silently=False,
+#             )
 
             messages.success(request, "OTP has been sent to your email.")
 
