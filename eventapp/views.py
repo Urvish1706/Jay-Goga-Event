@@ -32,6 +32,9 @@ import random
 from django.core.mail import send_mail
 from .models import EmailOTP
 
+from django.core.mail import send_mail
+from django.conf import settings
+
 def register_view(request):
     if request.method == "POST":
         form = RegisterForm(request.POST)
@@ -43,40 +46,41 @@ def register_view(request):
                 messages.error(request, "This email is already registered. Please login.")
                 return render(request, "register.html", {"form": form})
 
-            # Generate OTP
             otp = str(random.randint(100000, 999999))
 
-            # Save user but keep inactive
             user = form.save(commit=False)
             user.is_active = False
             user.save()
 
-            # Save OTP
             EmailOTP.objects.create(
                 user=user,
                 otp=otp
             )
 
-            # Send OTP email
-#             send_mail(
-#                 "Email Verification - Jay Goga Event",
-#                 f"""
-# Hello {user.first_name},
+            try:
+                send_mail(
+                    "Email Verification - Jay Goga Event",
+                    f"""
+Hello {user.first_name},
 
-# Thank you for registering.
+Thank you for registering.
 
-# Your OTP is: {otp}
+Your OTP is: {otp}
 
-# Please do not share this OTP with anyone.
+Please do not share this OTP with anyone.
 
-# Jay Goga Event Management
-#                 """,
-#                 "urvishpatel008@gmail.com",
-#                 [user.email],
-#                 fail_silently=False,
-#             )
+Jay Goga Event Management
+""",
+                    settings.EMAIL_HOST_USER,
+                    [user.email],
+                    fail_silently=False,
+                )
 
-            messages.success(request, "OTP has been sent to your email.")
+                messages.success(request, "OTP has been sent to your email.")
+
+            except Exception as e:
+                print(e)
+                messages.error(request, f"Email could not be sent: {e}")
 
             return redirect("verify_otp", user.id)
 
