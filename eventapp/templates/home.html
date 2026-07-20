@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
+{% load static %}   
 <!-- HERO SECTION -->
 
 <section class="hero text-center text-white">
@@ -55,7 +55,7 @@
 
     <div class="col-md-6">
 
-        <img src="/static/images/about.jpg"
+        <img src="{% static 'images/about.jpg' %}"
      class="img-fluid rounded shadow">
 
     </div>
